@@ -40,76 +40,14 @@ public class Q1 {
         new Thing (kw, 1, 10);
         new Thing (kw, 1, 11);
         
+        while (Monty.countThingsInBackpack() < 7){
         Monty.move();
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
+        Monty.pickThing();}
         
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
+        while (Monty.countThingsInBackpack() >= 7){
+        Monty.move();
+        }
+        }
         
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
+        }
         
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-        
-        if (Monty.countThingsInBackpack() < 7){
-        Monty.pickThing();
-        Monty.move();}
-        
-        else if(Monty.countThingsInBackpack() >= 7){
-        Monty.move();}
-    }
-    
-}
