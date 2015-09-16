@@ -66,9 +66,12 @@ public class Q2 {
         Monty.turnLeft();
         Monty.move();
         Monty.turnLeft();
-            }}
             }
-    }
+        if (Monty.canPickThing()){
+        Monty.pickThing();}
+        }}
+            }
+    
 
             
 
