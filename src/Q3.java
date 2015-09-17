@@ -28,8 +28,21 @@ public class Q3 {
         Monty.turnLeft();
         }
         
+        while (Monty.getDirection() != Direction.SOUTH && Monty.getStreet() < 0){
+        Monty.turnLeft();}
+        
         while (Monty.getStreet() != 0){
-        Monty.move();
+        Monty.move();}
+        
+        while (Monty.getDirection() != Direction.WEST && Monty.getAvenue() > 0){
+        Monty.turnLeft();
+        }
+        
+        while (Monty.getDirection() != Direction.EAST && Monty.getAvenue() < 0){
+        Monty.turnLeft();}
+        
+        while (Monty.getAvenue() != 0){
+        Monty.move();}
         }
     }
-}
+
