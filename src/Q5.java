@@ -114,7 +114,12 @@ public class Q5 {
                 Bonnie.turnLeft();
                 Bonnie.turnLeft();
                 }
-            }}
+            }}else{
+                Bonnie.turnLeft();
+                Bonnie.turnLeft();
+                Bonnie.turnLeft();
+                Bonnie.move();
+            }
 
         }
     }
