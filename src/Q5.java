@@ -2,6 +2,7 @@
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.Thing;
 import becker.robots.Wall;
 
 /*
@@ -90,8 +91,31 @@ public class Q5 {
         new Wall(kw, 9, 5, Direction.SOUTH);
         new Wall(kw, 9, 4, Direction.SOUTH);
         new Wall(kw, 10, 3, Direction.SOUTH);
+        
+        new Thing (kw, 3, 3);
+        new Thing (kw, 3, 5);
+        new Thing (kw, 3, 6);
+        new Thing (kw, 3, 8);
+        new Thing (kw, 4, 7);
+        new Thing (kw, 4, 4);
+        new Thing (kw, 5, 3);
+        new Thing (kw, 6, 4);
+        new Thing (kw, 6, 7);
+        new Thing (kw, 6, 8);
+        new Thing (kw, 8, 3);
+        new Thing (kw, 8, 6);
+        new Thing (kw, 8, 8);
+        new Thing (kw, 8, 9);
+        new Thing (kw, 8, 11);
+        new Thing (kw, 9, 9);
+        new Thing (kw, 9, 8);
+        new Thing (kw, 9, 5);
+        new Thing (kw, 9, 3);
 
         while (true) {
+            while (Bonnie.getStreet() == 10){
+                break;}
+            
             Bonnie.turnLeft();
             
             
@@ -99,6 +123,10 @@ public class Q5 {
             if (Bonnie.frontIsClear()){
 
             while (true) {
+                
+                if (Bonnie.getAvenue() == 3){
+                    Bonnie.turnLeft();
+                    break;}
 
                 if (!Bonnie.frontIsClear()) {
                     Bonnie.turnLeft();
@@ -120,7 +148,14 @@ public class Q5 {
                 Bonnie.turnLeft();
                 Bonnie.move();
             }
+                
+                
+                }
+                
 
-        }
-    }
-}
+                }
+            }
+
+        
+    
+
