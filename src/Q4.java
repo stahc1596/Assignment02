@@ -23,8 +23,10 @@ public class Q4 {
         
         City kw = new City();
         
+        //Our guard robot monty will be patroling Java's Castle.
         Robot Monty = new Robot (kw, 0, 0, Direction.EAST);
         
+        //The walls of Java's Castle that monty will be patroling.
         new Wall (kw, 1, 1, Direction.NORTH);
         new Wall (kw, 1, 1, Direction.SOUTH);
         new Wall (kw, 1, 1, Direction.EAST);
@@ -70,7 +72,7 @@ public class Q4 {
             Monty.turnLeft();
             Monty.turnLeft();
         }
-        
+        //monty will be constantly patrol the castle.        
 }
         
         }
