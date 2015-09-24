@@ -22,10 +22,12 @@ public class Q5 {
         // TODO code application logic here
 
         City kw = new City();
-
-        Robot Bonnie = new Robot(kw, 1, 3, Direction.SOUTH);
-        Robot Clyde = new Robot(kw, 1, 3, Direction.SOUTH);
-
+        
+        //Cleaning robots
+        Robot bonnie = new Robot(kw, 1, 3, Direction.SOUTH);
+        Robot clyde = new Robot(kw, 1, 3, Direction.SOUTH);
+        
+        //Walls of the driveways and sidewalk
         new Wall(kw, 1, 1, Direction.WEST);
         new Wall(kw, 2, 1, Direction.WEST);
         new Wall(kw, 3, 1, Direction.WEST);
@@ -92,6 +94,7 @@ public class Q5 {
         new Wall(kw, 9, 4, Direction.SOUTH);
         new Wall(kw, 10, 3, Direction.SOUTH);
         
+        //things = Garbage
         new Thing (kw, 3, 3);
         new Thing (kw, 3, 5);
         new Thing (kw, 3, 6);
@@ -101,7 +104,6 @@ public class Q5 {
         new Thing (kw, 5, 3);
         new Thing (kw, 6, 4);
         new Thing (kw, 6, 7);
-        new Thing (kw, 6, 8);
         new Thing (kw, 8, 3);
         new Thing (kw, 8, 6);
         new Thing (kw, 8, 8);
@@ -113,48 +115,90 @@ public class Q5 {
         new Thing (kw, 9, 3);
 
         while (true) {
-            while (Bonnie.getStreet() == 10){
-                break;}
-            
-            Bonnie.turnLeft();
             
             
+            if (bonnie.getStreet() == 10){
+                break;
+                //bonnie takes a rest at the end of the sidewalk while clyde
+                //finishes.
+            }
             
-            if (Bonnie.frontIsClear()){
+            if (bonnie.canPickThing()){
+                bonnie.pickThing();
+                //bonnie picks up all the garbage on the sidewalk
+            }
+            
+            bonnie.turnLeft();
+            
+            if (bonnie.frontIsClear()){
 
             while (true) {
                 
-                if (Bonnie.getAvenue() == 3){
-                    Bonnie.turnLeft();
+                if (bonnie.canPickThing()){
+                    bonnie.pickThing();
+                    //bonnie picks up all the garbage in the driveways.
+                }
+                
+                if (bonnie.frontIsClear()) {
+                    bonnie.move();}
+                //bonnie asks herself if there is a driveway next to her. If she
+                //is, then bonnie enters the driveway
+                
+                if (bonnie.getAvenue() == 3){
+                    bonnie.turnLeft();
+                    //bonnie exits the driveway on avenue 3.
+                    
+                    while (bonnie.countThingsInBackpack() > 0){
+                        bonnie.putThing();}
+                    //bonnie drops the garbage off at the end of the driveways
+                        
+                    bonnie.move();
+                    
                     break;}
 
-                if (!Bonnie.frontIsClear()) {
-                    Bonnie.turnLeft();
-                    Bonnie.turnLeft();
-                    Bonnie.turnLeft();}
+                if (!bonnie.frontIsClear()) {
+                    bonnie.turnLeft();
+                    bonnie.turnLeft();
+                    bonnie.turnLeft();}
                 
-
-                if (Bonnie.frontIsClear()) {
-                    Bonnie.move();}
-                
-                if (!Bonnie.frontIsClear()){
-                Bonnie.turnLeft();
-                Bonnie.turnLeft();
-                Bonnie.turnLeft();
-                }
             }}else{
-                Bonnie.turnLeft();
-                Bonnie.turnLeft();
-                Bonnie.turnLeft();
-                Bonnie.move();
+                bonnie.turnLeft();
+                bonnie.turnLeft();
+                bonnie.turnLeft();
+                bonnie.move();
             }
+            //bonnie sweeps around avenue 3 and in the driveways for all the
+            //garbage and drops the garbage off at the end of the driveway for 
+            //clyde to pick up.
                 
                 
                 }
+        
+        while ( true ){
+            
+            while (clyde.getStreet() == 10 && clyde.countThingsInBackpack() > 0){
+                clyde.putThing();
+                //clyde drops of all the garbage at the end of the sidewalk.
+                }
+            
+            if (clyde.getStreet() == 10){
+                break;
+            }
+            
+            while (clyde.canPickThing()){
+                clyde.pickThing();
+                //clyde picks up all the garbage bonnie left for him.
+            }
+            clyde.move();
+            //clyde cleans up all the garbage in avenue 3.
+            
+            
+            }
+        }
                 
 
                 }
-            }
+            
 
         
     
